@@ -1,11 +1,7 @@
-import { MapPage } from "./pages/MapPage";
+import MapPage from "./pages/MapPage";
 
-
-
-export default function App(){
-  return(
-    <div>
-      <MapPage/>
-    </div>
-  )
+function App() {
+  return <MapPage />;
 }
+
+export default App;

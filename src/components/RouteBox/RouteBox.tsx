@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "./Button";
-import SearchBox from "./SearchBox";
+import Button from "../Button/Button";
+import SearchBox from "../SearchBox/SearchBox";
 
 type RouteBoxProps = {
   traceRoute: () => void;

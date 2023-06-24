@@ -12,13 +12,13 @@ import "./MapPage.css";
 import pin from "../images/pin.png";
 import pinPoi from "../images/pin_poi.png";
 import pinRoute from "../images/pin_route.png";
-import SearchBox from "../components/SearchBox";
-import POIBox from "../components/POIBox";
+import SearchBox from "../components/SearchBox/SearchBox";
+import POIBox from "../components/POIBox/POIBox";
 import { Poi } from "../models/poi";
-import RouteBox from "../components/RouteBox";
+import RouteBox from "../components/RouteBox/RouteBox";
 
-// -27.596433, -48.558353
-const center = { lat: -27.596433, lng: -48.558353 };
+// -3.72707873230976, -38.498556885408526
+const center = { lat: -3.72707873230976, lng: -38.498556885408526 };
 
 const TABS = {
   search: 0,
@@ -85,6 +85,7 @@ export default function MapPage() {
       setDestination(pointB);
     }
   };
+  
 
   const onPointChanged = (point: google.maps.LatLngLiteral) => {
     setOrigin(null);
@@ -114,12 +115,13 @@ export default function MapPage() {
     }, [origin, destination]);
 
   const directionsCallback = useCallback((res:any) => {
+    console.log(res);
     if (res !== null && res.status === "OK") {
       setResponse(res);
     } else {
       console.log(res);
     }
-  }, []);
+  }, [response]);
 
   const directionsRendererOptions = useMemo<any>(() => {
     return {
@@ -132,8 +134,7 @@ export default function MapPage() {
 
   useEffect(() => {
     updatePois();
-  }, []);
-
+  }, []);  
   return (
     <LoadScript
       googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_KEY || ""}

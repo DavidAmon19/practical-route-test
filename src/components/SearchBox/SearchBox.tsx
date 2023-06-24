@@ -1,6 +1,6 @@
 import { StandaloneSearchBox } from "@react-google-maps/api";
 import { FieldValues, UseFormRegister } from "react-hook-form";
-import Input from "./Input";
+import Input from "../Input/Input";
 
 type SearchBoxProps = {
   onLoad?: (searchBox: google.maps.places.SearchBox) => void;

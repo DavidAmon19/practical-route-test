@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Input from "./Input";
-import SearchBox from "./SearchBox";
+import Input from "../Input/Input";
+import SearchBox from "../SearchBox/SearchBox";
 
 import "./POIBox.css";
 import { useForm } from "react-hook-form";
-import Button from "./Button";
+import Button from "../Button/Button";
 
 type POIBoxProps = {
   onPlaceSelected: (place: google.maps.places.PlaceResult) => void;
